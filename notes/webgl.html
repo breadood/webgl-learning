@@ -13,5 +13,54 @@
 			<h2>Draw Triangle - <a href="./../reference/lesson01/index.html">example</a></h2>
 		</section>
 	</main>
+
+
+	<section>
+		<h2>Some useful function:</h2>
+
+		<ul>
+			<li>1. showMatrix(Matrix, numberOfColumns, numberOfRows)</li>
+			<li>2. norm(Matrix, p = 2)</li>
+		</ul>
+	</section>
+	<script>
+		function showMatrix(mat, cols, rows) {
+			if (mat.length !== cols * rows) {
+				console.log('Dimensions are wrong!');
+				return;
+			}
+
+			var i = 0, j = 0, val = 0
+				matString = '';
+
+			for (i = 0; i < rows; i++) {
+				matString += '| ';
+				for (j = 0; j < cols; j++) {
+					val = mat[j * rows + i];
+					matString += (val).toFixed(2);
+					if (val >= 0)
+						matString += '  ';
+					else 
+						matString += ' ';
+				}
+				matString += '|\n';
+			}
+
+			console.log(matString);
+		}
+
+		function norm(mat, p) {
+			var sum = 0;
+			p = p || 2;
+
+			for (var i = 0; i < mat.lengt; i++) {
+				sum += Math.pow(mat[i], p);
+			}
+
+			return Math.pow(sum, 1 / p);
+		}
+
+
+	</script>
 </body>
 </html>
